@@ -3856,3 +3856,9 @@ html[data-abend] .wz-note { color: #ffd0dc; }
 .wz-fg-himmel { background: radial-gradient(ellipse 14% 7% at 26% 42%, #fff 60%, transparent 62%), radial-gradient(ellipse 10% 5% at 33% 38%, #fff 60%, transparent 62%), radial-gradient(ellipse 12% 5% at 20% 64%, #fff 55%, transparent 58%), linear-gradient(#9fd2f5, #e9f6ff); }
 .wz-fg-band { bottom: -12%; font-size: 0.62rem; }
 @keyframes wz-ballon { 50% { transform: translate(-50%, -6%); } }
+
+/* Poststempel liegt auf der Briefmarke statt auf dem Foto, damit nie ein Gesicht verdeckt wird */
+.postkarte .poststempel { top: 50px; right: 12px; }
+@media (min-width: 560px) {
+  .postkarte .poststempel { right: auto; left: calc(50% - 92px); top: 58px; padding: 7px 4px; font-size: 0.5rem; }
+}

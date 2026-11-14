@@ -425,7 +425,8 @@
     const nachtFenster = echt && echt.tag !== d.tag;
     if (!zeitBereit) { el.status.textContent = "Einen Moment …"; return; }
     if (istGeburtstag()) {
-      el.status.textContent = "Alles Gute zum Geburtstag, Toni 🎂 In " + tageBis(1, d) + " Tagen öffnest du das erste Türchen";
+      // nach dem echten Datum zählen, damit es in der Geburtstagsnacht nicht einen Tag mehr anzeigt
+      el.status.textContent = "Alles Gute zum Geburtstag, Toni 🎂 In " + tageBis(1, echt || d) + " Tagen öffnest du das erste Türchen";
       return;
     }
 
@@ -1284,7 +1285,7 @@
     { name: "party", spruch: "Partyzeit! 🥳 Die Capy Crew feiert mit" },
     { name: "rentier", spruch: "Ich bin heute ein Rentier. Rudolph ist neidisch 🦌" },
     { name: "lichter", spruch: "Ich leuchte heute extra für dich ✨" },
-    { name: "krone", spruch: "Ich bin heute das Weihnachts-Capy 👑 Fast geschafft!" },
+    { name: "krone", spruch: "Ich bin heute das Weihnachtscapy 👑 Fast geschafft!" },
   ];
   function capyOutfit(d) {
     if (istGeburtstag()) return { name: "krone", spruch: "Heute trage ich eine Krone, weil du Geburtstag hast 👑🎂" };
