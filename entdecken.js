@@ -163,7 +163,7 @@
     klappe.animate([{ transform: "none" }, { transform: "translateY(-3px) rotate(-28deg)" }], opt(260));
     await warte(240);
     if (gelesen >= ZETTEL_PRO_TAG) {
-      zeigeZettel(g, "Für heute ist der Briefkasten leer. Morgen kommt neue Post für dich 💌", true);
+      zeigeZettel(g, "Für heute ist der Briefkasten leer. Morgen kommt neue Post für dich ✉️", true);
     } else {
       const d = kalTag();
       const tagNr = Math.round((Date.UTC(d.jahr, d.monat - 1, d.tag) - Date.UTC(JAHR, 10, 1)) / 86400000);

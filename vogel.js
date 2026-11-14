@@ -269,11 +269,13 @@
       ? "#intro .umschlag-name, #intro .countdown-ziffern, #intro .countdown-titel, #intro .siegel, #intro .countdown-gruss, #intro .intro-hinweis"
       : ".polaroid img, .lightbox-figur img, #titel, .heute-karte .status, .zaehler-zahl";
     let summe = 0;
+    // Siegel, Countdown-Ziffern und Name dürfen gar nicht verdeckt werden (zählt so stark, dass der Vogel lieber schweigt)
+    const streng = "#intro .siegel, #intro .countdown-ziffern, #intro .umschlag-name";
     document.querySelectorAll(sel).forEach((e) => {
       const r = e.getBoundingClientRect();
       if (!r.width) return;
       const w = Math.min(b.right, r.right - 4) - Math.max(b.left, r.left + 4), h = Math.min(b.bottom, r.bottom - 4) - Math.max(b.top, r.top + 4);
-      if (w > 0 && h > 0) summe += w * h;
+      if (w > 0 && h > 0) summe += w * h * (e.matches(streng) ? 100 : 1);
     });
     // außerhalb des Bildschirms zählt doppelt
     const aussen = Math.max(0, 4 - b.top) + Math.max(0, b.bottom - (window.innerHeight - 4)) + Math.max(0, 4 - b.left) + Math.max(0, b.right - (W() - 4));
@@ -413,7 +415,7 @@
     18: () => "Psst … schau mal, was die zwei Capys ganz unten machen, wenn du sie antippst 😘",
     22: () => abends() ? "Psst … tipp mal auf den Mond, aber nur, wenn du dir was wünschen willst 🌠" : "Psst … heute Abend lohnt sich ein Tipp auf den Mond 🌙",
     1: () => "Psst … unter dem Kalender liegt Plätzchenteig. Tipp mal drauf 🍪",
-    3: () => "Psst … im Dorf ganz unten steht ein Briefkasten. Schau mal, ob Post für dich drin ist 💌",
+    3: () => "Psst … im Dorf ganz unten steht ein Briefkasten. Schau mal, ob Post für dich drin ist ✉️",
     6: () => "Psst … unten im Schnee liegt eine kleine Kugel. Daraus lässt sich bestimmt was bauen ⛄",
     10: () => "Psst … schüttel mal die Schneekugel neben dem Adventskranz ❄️",
     11: () => abends() ? "Psst … oben blinkt heute ein Stern. Tipp ihn an und wünsch dir was 🌟" : "Psst … heute Abend blinkt oben ein Stern. Dem darfst du einen Wunsch verraten 🌟",

@@ -804,7 +804,7 @@
       });
     } },
 
-    17: { titel: "Glühwein-Abend am Capy-Stand 🍷", dauer: 21000, spiel() {
+    17: { titel: "Glühweinabend am Capystand 🍷", dauer: 21000, spiel() {
       const breite = Math.min(W * 0.92, 440);
       // Abendlicher Weihnachtsmarkt hinter dem Stand
       const mh = Math.max(breite * 0.67 + 70, H * 0.55);
@@ -864,7 +864,7 @@
       spaeter(19000, () => regen(["✨", "♥", "❄"], 22, ["#f3c84b", "#ff8fab", "#fff"], 1800));
     } },
 
-    18: { titel: "Wellness-Tag im Capy-Thermalbad ♨️", dauer: 21000, spiel() {
+    18: { titel: "Wellnesstag im Capy-Thermalbad ♨️", dauer: 21000, spiel() {
       const breite = Math.min(W * 0.95, 460);
       const quelle = figur('<div class="sp-becken"></div>', "sp-onsen", { width: breite + "px" });
       quelle.animate([{ opacity: 0, transform: "translate(-50%, 30px)" }, { opacity: 1, transform: "translate(-50%, 0)" }], { duration: 900, fill: "forwards" });
@@ -958,7 +958,7 @@
       spaeter(19300, () => regen(["💦", "♥", "✨"], 18, ["#5aa9dd", "#ff8fab", "#f3c84b"], 1600));
     } },
 
-    19: { titel: "Großes Capy-Rodelrennen 🛷", dauer: 21000, spiel() {
+    19: { titel: "Großes Capy Rodelrennen 🛷", dauer: 21000, spiel() {
       const hang = figur('<svg viewBox="0 0 400 300" preserveAspectRatio="none"><path d="M0 60 L400 250 V300 H0z" fill="#fff"/><path d="M0 60 L400 250" stroke="#dfe9f5" stroke-width="6"/></svg>', "sp-hang");
       hang.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, fill: "forwards" });
       const winkel = Math.atan2(H * 0.633, W) * 180 / Math.PI;
@@ -1060,7 +1060,7 @@
         "sp-kanne", { width: kb * 0.45 + "px", left: W + "px", top: rand - kb * 0.62 + "px" });
       const zielX = W / 2 + gr * 0.16;
       spaeter(11400, () => {
-        sagBlase("Nachschub! 💚", { left: "50%", top: "18%" }, 1600);
+        sagBlase("Nachschub! 🍵", { left: "50%", top: "18%" }, 1600);
         kellner.animate([{ left: W + "px" }, { left: zielX + "px" }], { duration: 1400, easing: "ease-out", fill: "forwards" });
         kanne.animate([{ left: W + "px" }, { left: zielX - kb * 0.3 + "px" }], { duration: 1400, easing: "ease-out", fill: "forwards" });
       });
@@ -1078,13 +1078,13 @@
         svg.querySelectorAll(".sp-trinker").forEach((t, i) => t.animate([{ transform: "translateY(0)" }, { transform: "translateY(3px)" }, { transform: "translateY(0)" }], { duration: 300, iterations: 10, delay: i * 100 }));
       });
       spaeter(19400, () => {
-        sagBlase("Hicks! Jetzt sind wir satt 😋💚", { left: "50%", top: "18%" }, 1600);
+        sagBlase("Hicks! Jetzt sind wir satt 😋🍵", { left: "50%", top: "18%" }, 1600);
         const r = becher.getBoundingClientRect(), bb = buehne.getBoundingClientRect();
         partikel(r.left - bb.left + r.width / 2, r.top - bb.top + r.height * 0.15, ["♥", "○", "✨"], 14, 100, ["#4a8a5c", "#e85d7e", "#f6fbef"]);
       });
     } },
 
-    21: { titel: "Capy-Feuerwerk nur für dich 🎆", dauer: 21000, spiel() {
+    21: { titel: "Capy Feuerwerk nur für dich 🎆", dauer: 21000, spiel() {
       const nacht = figur("", "sp-nacht");
       nacht.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 700, fill: "forwards" });
       const gr = Math.min(W * 0.22, 90);
@@ -1202,7 +1202,7 @@
       spaeter(20000, () => { const l = lage(schneemann); partikel(l.x + l.w / 2, l.y, ["♥"], 12, 80, ["#ff4d7d", "#ff8fab"]); });
     } },
 
-    23: { titel: "Capy-Polonaise 🎶", dauer: 22000, spiel() {
+    23: { titel: "Capy Polonaise 🎶", dauer: 22000, spiel() {
       const gr = Math.min(W * 0.2, 96);
       const farben = ["#f3dc9f", "#fda4b8", "#9be3b0", "#7cc4f0", "#f3c84b", "#b39ddb", "#ff8fab", "#f3dc9f", "#9be3b0"];
       for (let i = 0; i < 9; i++) {

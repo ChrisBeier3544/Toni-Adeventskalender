@@ -1621,8 +1621,8 @@
     origami: '<svg viewBox="0 0 40 36"><path d="M20 33 4 17q-5-6 0-11 6-5 12 1l4 4 4-4q6-6 12-1 5 5 0 11z" fill="#ff8fab"/><path d="M20 33V11M4 17l16-6 16 6" stroke="#e85d7e" stroke-width="1" fill="none"/><path d="M20 11 4 6M20 11l16-5" stroke="#ffc2d1" stroke-width="1" fill="none"/></svg>',
     schluessel: '<svg viewBox="0 0 58 30"><circle cx="11" cy="15" r="8" fill="none" stroke="#d4a84b" stroke-width="4"/><path d="M19 15h22v6M33 15v5M41 15v4" stroke="#d4a84b" stroke-width="4" fill="none"/><path d="M3 15c-2 4-1 10 6 12" stroke="#e85d7e" stroke-width="1.2" fill="none"/><rect x="40" y="2" width="17" height="10" rx="2" fill="#fff3d6" stroke="#d4a84b" stroke-width=".8" transform="rotate(14 48 7)"/><text x="48" y="9.2" font-size="4" text-anchor="middle" fill="#9d2449" font-weight="800" font-family="Nunito, sans-serif" transform="rotate(14 48 7)">0:30</text></svg>',
   };
-  const SCHATZ_NAME = { rubbellos: "Rubbellos", seifenblasen: "Seifenblasen", glueckskeks: "Glückskeks", wackelcapy: "Wackel-Capy", liebesbrief: "kleiner Liebesbrief",
-    sternenglas: "Glas voller Sterne", kompass: "Kompass", spieluhr: "Spieluhr", polaroid: "Sofortbild", fernglas: "Fernglas", origami: "Origami-Herz", schluessel: "goldener Schlüssel" };
+  const SCHATZ_NAME = { rubbellos: "Rubbellos", seifenblasen: "Seifenblasen", glueckskeks: "Glückskeks", wackelcapy: "Wackelcapy", liebesbrief: "kleiner Liebesbrief",
+    sternenglas: "Glas voller Sterne", kompass: "Kompass", spieluhr: "Spieluhr", polaroid: "Sofortbild", fernglas: "Fernglas", origami: "Origamiherz", schluessel: "goldener Schlüssel" };
   let schatz = null, schatzTag = 0;
   function legeSchatz(t) {
     if (schatzTag === t) return;
