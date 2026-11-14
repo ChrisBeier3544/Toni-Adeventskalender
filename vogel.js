@@ -274,8 +274,10 @@
     document.querySelectorAll(sel).forEach((e) => {
       const r = e.getBoundingClientRect();
       if (!r.width) return;
-      const w = Math.min(b.right, r.right - 4) - Math.max(b.left, r.left + 4), h = Math.min(b.bottom, r.bottom - 4) - Math.max(b.top, r.top + 4);
-      if (w > 0 && h > 0) summe += w * h * (e.matches(streng) ? 100 : 1);
+      // Siegel und Vogel bewegen sich leicht, deshalb um wichtige Schrift einen Sicherheitsabstand halten
+      const wichtig = e.matches(streng), m = wichtig ? -14 : 4;
+      const w = Math.min(b.right, r.right - m) - Math.max(b.left, r.left + m), h = Math.min(b.bottom, r.bottom - m) - Math.max(b.top, r.top + m);
+      if (w > 0 && h > 0) summe += w * h * (wichtig ? 100 : 1);
     });
     // außerhalb des Bildschirms zählt doppelt
     const aussen = Math.max(0, 4 - b.top) + Math.max(0, b.bottom - (window.innerHeight - 4)) + Math.max(0, 4 - b.left) + Math.max(0, b.right - (W() - 4));
